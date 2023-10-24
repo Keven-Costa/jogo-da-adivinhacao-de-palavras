@@ -1,70 +1,76 @@
 import random
 
-palavras = ["ALGORITMO", "VARIÁVEL", "CONDICIONAL", "ITERAÇÃO", "FUNÇÃO", "ARRAY", "FRONTEND",
-            "COMPILAÇÃO", "INTERFACE", "OBJETO", "HERANÇA", "POLIMORFISMO", "DESENVOLVEDOR",
-            "LOOP", "BIBLIOTECA", "SINTAXE", "CLASSE", "MÉTODO", "COMPILADOR", "BACKEND"]
-dicas = {"ALGORITMO": "Sequência de passos para resolver um problema.",
-         "VARIÁVEL": "Armazena dados ou valores em um programa.",
-         "CONDICIONAL": "Permite ao programa tomar decisões com base em condições",
-         "ITERAÇÃO": " Repetição de um bloco de código até que uma condição seja atendida.",
-         "FUNÇÃO": "Bloco de código que pode ser chamado e reutilizado.",
-         "ARRAY": "Estrutura de dados que armazena elementos do mesmo tipo.",
-         "FRONTEND": "Parte visível de um aplicativo ou site com a qual os usuários interagem.",
-         "COMPILAÇÃO": "Processo de transformar código-fonte em código executável.",
-         "INTERFACE": "Ponte de comunicação entre diferentes componentes de um sistema.",
-         "OBJETO": "Instância de uma classe em programação orientada a objetos.",
-         "HERANÇA": "Permite que uma classe herde atributos e métodos de outra.",
-         "POLIMORFISMO": "Capacidade de objetos de diferentes classes responderem a métodos de maneira ",
-         "DESENVOLVEDOR": "Pessoa que escreve, mantém e aprimora software.",
-         "LOOP": "Estrutura que permite a repetição de código até que uma condição seja atendida.",
-         "BIBLIOTECA": "Conjunto de funções e módulos pré-escritos para facilitar o desenvolvimento.",
-         "SINTAXE": "Conjunto de regras que governam a estrutura e a escrita correta do código.",
-         "CLASSE": "Modelo ou blueprint para criar objetos em programação orientada a objetos.",
-         "MÉTODO": "Função associada a um objeto ou classe.",
-         "COMPILADOR": " Software que traduz código-fonte em código de máquina.",
-         "BACKEND": " Parte do sistema que lida com lógica e processamento de dados."
-         }
-i = 0
-vidas = 0
-palavra_oculta = random.choice(palavras)
-auxiliar = ""
-
-print("----------------------------------------")
-print("    BEM-VINDO AO JOGO DA ADIVINHAÇÃO    ")
-print("----------------------------------------")
-
-dica = dicas[palavra_oculta]
-print("Dica: {}".format(dica))
-
-print(palavra_oculta)
+palavras = ["algoritmo", "variável", "condicional", "iteração", "função", "array", "frontend",
+            "compilação", "interface", "objeto", "herança", "polimorfismo", "desenvolvedor",
+            "loop", "biblioteca", "sintaxe", "classe", "método", "compilador", "backend"]
 letras_digitadas = []
-letra_adivinhada_anteriormente = False
+dicas = {"algoritmo": "sequência de passos para resolver um problema.",
+         "variável": "armazena dados ou valores em um programa.",
+         "condicional": "permite ao programa tomar decisões com base em condições",
+         "iteração": "repetição de um bloco de código até que uma condição seja atendida.",
+         "função": "bloco de código que pode ser chamado e reutilizado.",
+         "array": "estrutura de dados que armazena elementos do mesmo tipo.",
+         "frontend": "parte visível de um aplicativo ou site com a qual os usuários interagem.",
+         "compilação": "processo de transformar código-fonte em código executável.",
+         "interface": "ponte de comunicação entre diferentes componentes de um sistema.",
+         "objeto": "instância de uma classe em programação orientada a objetos.",
+         "herança": "permite que uma classe herde atributos e métodos de outra.",
+         "polimorfismo": "capacidade de objetos de diferentes classes responderem a métodos de maneira polimórfica",
+         "desenvolvedor": "pessoa que escreve, mantém e aprimora software.",
+         "loop": "estrutura que permite a repetição de código até que uma condição seja atendida.",
+         "biblioteca": "conjunto de funções e módulos pré-escritos para facilitar o desenvolvimento.",
+         "sintaxe": "conjunto de regras que governam a estrutura e a escrita correta do código.",
+         "classe": "modelo ou blueprint para criar objetos em programação orientada a objetos.",
+         "método": "função associada a um objeto ou classe.",
+         "compilador": "software que traduz código-fonte em código de máquina.",
+         "backend": "parte do sistema que lida com lógica e processamento de dados."
+         }
+vidas = 5
+letra = None
+palavra_oculta = None
+dica = None
 
-while True:
-    letra = input("Digite uma LETRA: ").upper()
-
+palavra_oculta = random.choice(palavras)
+def boasvindas():
+    print("----------------------------------------")
+    print("    BEM-VINDO AO JOGO DA ADIVINHAÇÃO    ")
+    print("----------------------------------------")
+def dica():
+    dica = dicas[palavra_oculta]
+    print("Dica: {}".format(dica))
+def verifica_letra(letra):
     if letra in letras_digitadas:
         print(f"A letra '{letra}' já foi digitada.")
     elif letra in palavra_oculta:
         letras_digitadas.append(letra)
         print("ACERTOU!!!")
-        letra_adivinhada_anteriormente = True
+        return True
     else:
         letras_digitadas.append(letra)
         print("VOCÊ ERROU!!!")
-        letra_adivinhada_anteriormente = False
-
-    # Verifique se todas as letras da palavra oculta foram adivinhadas
+        return False
+def letras_adivinhadas():
     palavra_adivinhada = ""
     for letra in palavra_oculta:
         if letra in letras_digitadas:
             palavra_adivinhada += letra
         else:
             palavra_adivinhada += "_"
+    return palavra_adivinhada
 
-    if palavra_adivinhada == palavra_oculta:
-        print(f"Parabéns! Você adivinhou a palavra: {palavra_oculta}")
-        break
+boasvindas()
+dica()
+while vidas > 0:
+    letra = input("Digite uma LETRA: ").lower()
+    if verifica_letra(letra):
+        palavra_adivinhada = letras_adivinhadas()
+        print(palavra_adivinhada)
+        if palavra_adivinhada == palavra_oculta:
+            print(f"Parabéns! Você adivinhou a palavra: {palavra_oculta}")
+            break
+    else:
+        vidas -= 1
+        print(f"Você tem {vidas} vidas restantes.")
 
-    if letra_adivinhada_anteriormente:
-        letra_adivinhada_anteriormente = False  # Redefina a variável após a adivinhação bem-sucedida
+if vidas == 0:
+    print(f"Suas vidas acabaram. A palavra era: {palavra_oculta}")
