@@ -36,24 +36,35 @@ print("----------------------------------------")
 dica = dicas[palavra_oculta]
 print("Dica: {}".format(dica))
 
-# print(palavra_oculta)
+print(palavra_oculta)
+letras_digitadas = []
+letra_adivinhada_anteriormente = False
+
 while True:
-    letra = str(input("Digite uma LETRA: "))
-    if letra == palavra_oculta[i]:
-        print("Acertou")
+    letra = input("Digite uma LETRA: ").upper()
 
-        auxiliar = auxiliar + letra
-
-        i = i + 1
-        if auxiliar == palavra_oculta:
-            print("PARABENS VC GANHOU!!!")
-
-            break
+    if letra in letras_digitadas:
+        print(f"A letra '{letra}' já foi digitada.")
+    elif letra in palavra_oculta:
+        letras_digitadas.append(letra)
+        print("ACERTOU!!!")
+        letra_adivinhada_anteriormente = True
     else:
-        print("vc errou")
-        i = i + 1
-        auxiliar = auxiliar + palavra_oculta[i]
-        vidas = vidas + 1
-        if vidas == 5:
-            print("GAME OVER!!!")
-            break
+        letras_digitadas.append(letra)
+        print("VOCÊ ERROU!!!")
+        letra_adivinhada_anteriormente = False
+
+    # Verifique se todas as letras da palavra oculta foram adivinhadas
+    palavra_adivinhada = ""
+    for letra in palavra_oculta:
+        if letra in letras_digitadas:
+            palavra_adivinhada += letra
+        else:
+            palavra_adivinhada += "_"
+
+    if palavra_adivinhada == palavra_oculta:
+        print(f"Parabéns! Você adivinhou a palavra: {palavra_oculta}")
+        break
+
+    if letra_adivinhada_anteriormente:
+        letra_adivinhada_anteriormente = False  # Redefina a variável após a adivinhação bem-sucedida
