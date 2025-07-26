@@ -2,7 +2,23 @@
 
 Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina Técnicas de Programação. O jogo seleciona aleatoriamente uma palavra relacionada à programação e exibe uma dica para o jogador. O objetivo é adivinhar a palavra digitando letras antes que todas as vidas se esgotem.
 
-## Funcionalidades ⚙️
+## 📌 Índice
+
+- [Tecnologias Utilizadas](#tecnologias-utilizadas )
+- [Funcionalidades](#funcionalidades)
+- [Como Jogar](#como-jogar)
+- [Como Executar](#como-executar)
+- [Imagem da tela do jogo](#imagem-da-tela-do-jogo)
+
+
+
+## 🛠️ Tecnologias Utilizadas 
+
+- Python 3
+
+- Biblioteca random (para seleção aleatória da palavra)
+
+## ⚙️ Funcionalidades 
 
 - Seleção aleatória de uma palavra relacionada à programação.
 
@@ -16,13 +32,8 @@ Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina 
 
 - O jogo termina quando o jogador acerta a palavra ou perde todas as vidas.
 
-## Tecnologias Utilizadas 🛠
 
-- Python 3
-
-- Biblioteca random (para seleção aleatória da palavra)
-
-## Como Jogar 🎮
+## 🎮 Como Jogar 
 
 1. Execute o programa Python.
 
@@ -34,20 +45,23 @@ Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina 
 
 5. Continue tentando até adivinhar a palavra ou perder todas as vidas.
 
-## Como Executar 🚀
+## 🚀 Como Executar 
 
 1. Certifique-se de ter o Python 3 instalado no seu sistema.
 
-2. Baixe ou copie o código do jogo.
+2. Clone o repositório ou copie o código do jogo e colo em um IDE online.
 
 3. No terminal ou prompt de comando, navegue até o diretório onde o arquivo do jogo está salvo.
 
 4. Execute o seguinte comando:
-    ```
-    python nome_do_arquivo.py
+    ```bash
+    python3 jogo.py
     ```
 5. Siga as instruções na tela para jogar.
 
-## Autor 👨‍💻 
+## 📷 Imagem da tela do jogo
+![alt text](jogo1.png) 
+
+## 👨‍💻  Autor 
 
 Desenvolvido por Keven Costa para a disciplina de Técnicas de Programação.
