@@ -1,24 +1,29 @@
-## Descrição
+# Jogo de Adivinhação de Palavras
+
+![Status](https://img.shields.io/badge/status-concluido-green) 
+![Tecnologias](https://img.shields.io/badge/tech-Python-blue) 
+![License](https://img.shields.io/badge/license-MIT-green)
 
 Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina Técnicas de Programação. O jogo seleciona aleatoriamente uma palavra relacionada à programação e exibe uma dica para o jogador. O objetivo é adivinhar a palavra digitando letras antes que todas as vidas se esgotem.
 
 ## 📌 Índice
 
-- [Tecnologias Utilizadas](#tecnologias-utilizadas )
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
 - [Funcionalidades](#funcionalidades)
 - [Como Jogar](#como-jogar)
 - [Como Executar](#como-executar)
 - [Imagem da tela do jogo](#imagem-da-tela-do-jogo)
+- [Autor](#autor)
 
 
 
-## 🛠️ Tecnologias Utilizadas 
+## <a id="tecnologias-utilizadas"></a> 🛠️ Tecnologias Utilizadas 
 
 - Python 3
 
 - Biblioteca random (para seleção aleatória da palavra)
 
-## ⚙️ Funcionalidades 
+## <a id="funcionalidades"></a> ⚙️ Funcionalidades 
 
 - Seleção aleatória de uma palavra relacionada à programação.
 
@@ -33,7 +38,7 @@ Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina 
 - O jogo termina quando o jogador acerta a palavra ou perde todas as vidas.
 
 
-## 🎮 Como Jogar 
+## <a id="como-jogar"></a> 🎮 Como Jogar 
 
 1. Execute o programa Python.
 
@@ -45,7 +50,7 @@ Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina 
 
 5. Continue tentando até adivinhar a palavra ou perder todas as vidas.
 
-## 🚀 Como Executar 
+## <a id="como-executar"></a> 🚀 Como Executar 
 
 1. Certifique-se de ter o Python 3 instalado no seu sistema.
 
@@ -59,9 +64,9 @@ Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina 
     ```
 5. Siga as instruções na tela para jogar.
 
-## 📷 Imagem da tela do jogo
+## <a id="imagem-da-tela-do-jogo"></a> 📷 Imagem da tela do jogo
 ![alt text](jogo1.png) 
 
-## 👨‍💻  Autor 
+## <a id="autor"></a>👨‍💻  Autor 
 
 Desenvolvido por Keven Costa para a disciplina de Técnicas de Programação.
