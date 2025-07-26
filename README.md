@@ -54,7 +54,7 @@ Este é um jogo simples de adivinhação de palavras desenvolvido na disciplina 
 
 1. Certifique-se de ter o Python 3 instalado no seu sistema.
 
-2. Clone o repositório ou copie o código do jogo e colo em um IDE online.
+2. Clone o repositório ou copie o código do jogo e cole em um IDE online e execute.
 
 3. No terminal ou prompt de comando, navegue até o diretório onde o arquivo do jogo está salvo.
 
